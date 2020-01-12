@@ -1,0 +1,12 @@
+@import url('../public/vendor/fonts/fonts.css');
+.App {
+  position: relative;
+  min-height: 100vh;
+  margin: 0 auto;
+  width: 95%;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+}
+
+body {
+  margin: 0;
+}
