@@ -50,7 +50,6 @@ class CardContainer extends Component {
       );
     }
   }
-  // () => {this.props.onClick(card.id)}
 
 }
 

@@ -4,7 +4,6 @@ function timeConverter(UNIX_timestamp) {
   const month = timeInMs.getMonth();
   const date = timeInMs.getDate();
   const time = date + '.' + month + '.' + year;
-  console.log(time);
   return time;
 }
 

@@ -35,6 +35,7 @@
   top: 21px;
   right: 21px;
   cursor: pointer;
+  z-index: 1;
 }
 .popup__image {
   max-width: 331px;
@@ -60,15 +61,18 @@
     'comments'
     'form';
     grid-template-columns:1fr;
-    grid-template-rows: 205px minmax(50px, 1fr) 1fr;
+    grid-template-rows: 205px auto 1fr;
     grid-column-gap: 5px;
     grid-row-gap: 25px;
   }
   .popup__image {
+    position: fixed;
+    top: 0;
+    left: 0;
     max-width: initial;
     max-height: initial;
     width: 100%;
-    height: 100%;
+    height: 205px;
     object-fit: cover;
     margin: 0 auto;
     grid-area: image;
