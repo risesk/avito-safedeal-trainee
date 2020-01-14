@@ -35,11 +35,13 @@ class App extends Component {
       <div className='App'>
         <Header />
         <CardContainer onClick={this.handleClick}  />
-        <Popup
-          isOpen={this.state.isOpen}
-          cardId={this.state.cardId}
-          onClose={() => this.onClose()}
-        />
+        {this.state.isOpen &&
+          <Popup
+            isOpen={this.state.isOpen}
+            cardId={this.state.cardId}
+            onClose={() => this.onClose()}
+          />
+        }
         <Footer />
       </div>
     );
