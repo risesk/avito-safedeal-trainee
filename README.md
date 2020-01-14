@@ -24,7 +24,8 @@
 ```npm run start```
 
 ### TODO: 
-Доделать отправку комментариев и валидацию формы.
+1. Доделать валидацию формы.
+2. Исправить баг с загрузкой предыдущего изображения при открытии модального окна.
 
 ​
-Дизайн можно найти [тут](https://www.figma.com/file/3VP0QDK3kjdfbkj8TRrtsx/Test-task?node-id=0%3A1).
+Сслыка на задание: https://github.com/avito-tech/safedeal-frontend-trainee

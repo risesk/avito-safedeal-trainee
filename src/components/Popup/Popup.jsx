@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import './popup.css';
-import {Form} from '../Form/Form';
+import Form from '../Form/Form';
 import {Comments} from '../Comments/Comments';
 
 class Popup extends Component {
@@ -15,31 +15,23 @@ class Popup extends Component {
 
   getComments (cardId) {
     fetch("https://boiling-refuge-66454.herokuapp.com/images/" + cardId)
-    .then(res => res.json())
-    .then(
-      (result) => {
-        console
-        this.setState({
-          isLoaded: true,
-          card: result
-        });
-      },
-      (error) => {
-        this.setState({
-          isLoaded: true,
-          cardId,
-          error
-        });
-      }
-    )
+      .then(res => res.json())
+      .then(
+        (res) => {
+          this.setState({
+            isLoaded: true,
+            card: res
+          });
+        },
+        (error) => {
+          this.setState({
+            isLoaded: true,
+            cardId,
+            error
+          });
+        }
+      )
   }
-
-  // sendForm(cardId) {
-  //   fetch("https://boiling-refuge-66454.herokuapp.com/images/" + cardId + "/comments")
-  //   this.setState( {
-  //     card.comments
-  //   });
-  // }
 
   render() {
     if (!this.props.isOpen) {
@@ -65,7 +57,7 @@ class Popup extends Component {
             className="popup__image"
           />
           <Comments comments={this.state.card.comments} />
-          <Form onClick={() => this.sendForm()} />
+          <Form cardId={this.state.card.id} onClick={() => this.sendForm()} />
         </div>
       </div>
     );
