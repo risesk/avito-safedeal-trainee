@@ -24,7 +24,7 @@
 ```npm run start```
 
 ### TODO: 
-1. Доделать валидацию формы.
+1. Улучшить UX:  Добавить лоадеры на асинхронные операции.
 
 ​
 Сслыка на задание: https://github.com/avito-tech/safedeal-frontend-trainee

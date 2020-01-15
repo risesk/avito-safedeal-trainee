@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import './cardContainer.css'
+import { config } from '../../utils/config';
 
 class CardContainer extends Component {
   constructor(props) {
@@ -12,8 +13,8 @@ class CardContainer extends Component {
   }
 
   componentDidMount() {
-    fetch("https://boiling-refuge-66454.herokuapp.com/images")
-      .then(res => res.json())
+    fetch(config.BASE_URL)
+      .then(res => res.json() )
       .then(
         (result) => {
           this.setState({

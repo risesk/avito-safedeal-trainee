@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import './popup.css';
 import Form from '../Form/Form';
 import {Comments} from '../Comments/Comments';
+import { config } from '../../utils/config';
 
 class Popup extends Component {
   constructor(props) {
@@ -14,7 +15,7 @@ class Popup extends Component {
   }
 
   getComments (cardId) {
-    fetch("https://boiling-refuge-66454.herokuapp.com/images/" + cardId)
+    fetch(config.BASE_URL + cardId)
       .then(res => res.json())
       .then(
         (res) => {

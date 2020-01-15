@@ -10,22 +10,12 @@
   width: 100%;
 }
 
-/* .input-container:last-of-type {
-  margin-bottom: 24px;
-} */
-
 .error-message {
   color: #FF3333;
   font-size: 12px;
   line-height: 15px;
-  visibility: hidden;
   min-height: 15px;
   display: block;
-}
-
-.input-container__invalid .error-message {
-  padding: 0px;
-  visibility: visible;
 }
 
 .input {
@@ -53,10 +43,13 @@
   cursor: pointer;
   box-sizing: border-box;
   outline: none;
-  transition: .2s ease-in;
+  transition: .1s ease-in;
 }
 
 .button:hover {
   background-color: #347EFF;
 }
 
+.button.button_inactive {
+  background-color: rgb(138, 138, 138);
+}
