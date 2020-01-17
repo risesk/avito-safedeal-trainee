@@ -10,8 +10,10 @@ class Popup extends Component {
     this.state = {
       error: null,
       isLoaded: false,
-      card: {}
+      card: {},
+      comments: [],
     };
+    this.addComment = this.addComment.bind(this);
   }
 
   getComments (cardId) {
@@ -21,7 +23,8 @@ class Popup extends Component {
         (res) => {
           this.setState({
             isLoaded: true,
-            card: res
+            card: res,
+            comments: res.comments
           });
         },
         (error) => {
@@ -32,6 +35,12 @@ class Popup extends Component {
           });
         }
       )
+  }
+
+  addComment(comment) {
+    this.setState( {
+      comments: this.state.comments.concat(comment),
+    });
   }
 
   render() {
@@ -57,8 +66,8 @@ class Popup extends Component {
             alt={"Изображение заруженное с сервера"}
             className="popup__image"
           />
-          <Comments comments={this.state.card.comments} />
-          <Form cardId={this.state.card.id} onClick={() => this.sendForm()} />
+          <Comments comments={this.state.comments} />
+          <Form cardId={this.state.card.id} onSend={this.addComment} />
         </div>
       </div>
     );

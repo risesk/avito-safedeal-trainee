@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import './form.css';
 import { config } from '../../utils/config';
+import generateUniqId from '../../utils/generateUniqId';
 
 class Form extends Component {
   constructor(props) {
@@ -55,9 +56,15 @@ class Form extends Component {
   handleSubmit(event) {
     event.preventDefault();
     this.postComment()
-    .then(data => {
+    .then( () => {
+      this.props.onSend({
+        // Допущение: Генерится случайный id для добавляемого комментария.
+        // Реальный id будет генериться на бэкенде.
+        id: generateUniqId(config.MIN_ID_INDEX, config.MAX_ID_INDEX),
+        text: this.state.comment,
+        date: Date.now(),
+      });
       this.clearForm();
-      alert("Комментарий отправлен!");
     })
     .catch( (err) => {
       alert(err);

@@ -3,7 +3,7 @@ import './comments.css';
 import timeConverter from '../../utils/convertTime';
 
 export const Comments = (props) => {
-  const comments = props.comments;
+  let comments = props.comments;
   if (!comments) return null;
 
   return (
